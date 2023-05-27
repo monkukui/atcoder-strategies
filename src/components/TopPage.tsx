@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Form } from 'semantic-ui-react'
 import { Problem } from "./Strategies";
 import Strategies from './Strategies'
+import json from '../contests.json';
 
 const TopPage = () => {
   const [contestURL, setContesetURL] = useState('');
@@ -21,43 +22,23 @@ const TopPage = () => {
         <Form.Button
           color="instagram"
           onClick={() => {
-            // 1. コンテストサイトから情報を fetch
-            // 2. 配点配列を用意
-            // 3. useState に代入
-            setProblems([
-              {
-                id: "A",
-                score: 100,
-              },
-              {
-                id: "B",
-                score: 200,
-              },
-              {
-                id: "C",
-                score: 300,
-              },
-              {
-                id: "D",
-                score: 400,
-              },
-              {
-                id: "E",
-                score: 475,
-              },
-              {
-                id: "F",
-                score: 525,
-              },
-              {
-                id: "G",
-                score: 550,
-              },
-              {
-                id: "Ex",
-                score: 600,
+            if (contestURL === '') {
+              alert('contest URL が空です');
+              return;
+            }
+            let ok: boolean = false;
+            for (let i = 0; i < json.length; i++) {
+              console.log(json[i].id);
+              if (json[i].id === contestURL) {
+                console.log(json[i]);
+                setProblems(json[i].problems);
+                ok = true;
+                break;
               }
-            ])
+            }
+            if (!ok) {
+              alert('これをみて色々察してください\n a');
+            }
           }}
         >
           Go

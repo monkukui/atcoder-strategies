@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { Table }  from 'semantic-ui-react'
+import { Table, Form }  from 'semantic-ui-react'
 
-import enumerateSolvedProblemsCombinations from "../utils/enumerateSolvedProblemCombinations";
+import enumerateSolvedProblemCombinations from "../utils/enumerateSolvedProblemCombinations";
 import sortByScore from "../utils/sortByScore";
 
 export interface Problem {
   id: string
   score: number
+  selected: boolean
 }
 
 export interface SolvedProblems {
@@ -22,8 +23,12 @@ type Props = {
 
 const Strategies : React.FC<Props> = (props) => {
 
-  const solvedProblemsCombinations = enumerateSolvedProblemsCombinations(props.problems);
-  const sortedSolvedProblemsCombinations = sortByScore(solvedProblemsCombinations);
+  const [selectedProblems, setSelectedProblems] = useState<Problem[]>(props.problems);
+  const [solvedProblemCombinations, setSolvedProblemCombinations] = useState<SolvedProblems[]>(enumerateSolvedProblemCombinations(props.problems));
+  useEffect(() => {
+    setSelectedProblems(props.problems);
+    setSolvedProblemCombinations(enumerateSolvedProblemCombinations(selectedProblems));
+  }, [props, selectedProblems]);
 
   return (
     <>
@@ -33,6 +38,7 @@ const Strategies : React.FC<Props> = (props) => {
             <Table.Row>
               <Table.HeaderCell>問題</Table.HeaderCell>
               <Table.HeaderCell>点数</Table.HeaderCell>
+              <Table.HeaderCell>解く可能性がある</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
 
@@ -44,6 +50,17 @@ const Strategies : React.FC<Props> = (props) => {
                 >
                   <Table.Cell>{record.id}</Table.Cell>
                   <Table.Cell>{record.score}</Table.Cell>
+                  <Table.Cell>
+                    <Form.Checkbox
+                      defaultChecked
+                      onClick={() => {
+                        let v = selectedProblems;
+                        v[index].selected = !v[index].selected;
+                        setSelectedProblems(v);
+                        setSolvedProblemCombinations(enumerateSolvedProblemCombinations(selectedProblems));
+                      }}
+                    />
+                  </Table.Cell>
                 </Table.Row>
               )
             })}
@@ -63,7 +80,7 @@ const Strategies : React.FC<Props> = (props) => {
           </Table.Header>
 
           <Table.Body>
-            {sortedSolvedProblemsCombinations!.map((record, index) => {
+            {sortByScore(solvedProblemCombinations)!.map((record, index) => {
               return (
                 <Table.Row
                   key={record.solvedProblemIds.join(',')}

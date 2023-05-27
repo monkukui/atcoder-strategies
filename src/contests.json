@@ -1,0 +1,47 @@
+[
+  {
+    "id": "https://atcoder.jp/contests/abc303",
+    "problems": [
+      {
+        "selected": true,
+        "id": "A",
+        "score": 100
+      },
+      {
+        "selected": true,
+        "id": "B",
+        "score": 200
+      },
+      {
+        "selected": true,
+        "id": "C",
+        "score": 300
+      },
+      {
+        "selected": true,
+        "id": "D",
+        "score": 400
+      },
+      {
+        "selected": true,
+        "id": "E",
+        "score": 475
+      },
+      {
+        "selected": true,
+        "id": "F",
+        "score": 525
+      },
+      {
+        "selected": true,
+        "id": "G",
+        "score": 550
+      },
+      {
+        "selected": true,
+        "id": "Ex",
+        "score": 600
+      }
+    ]
+  }
+]

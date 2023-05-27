@@ -62,7 +62,7 @@ const App = () => {
             textAlign="center"
             inverted
             style={{
-              minHeight: page === 'top' ? 350 : 40,
+              minHeight: page === 'top' ? 400 : 40,
               padding: '0.2em 0em',
             }}
             vertical
