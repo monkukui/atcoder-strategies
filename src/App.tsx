@@ -27,7 +27,7 @@ const HomepageHeading = () => (
     >
       At
       <span style={{ color: 'rgb(229, 115, 110)' }}>C</span>
-      oder tarareba
+      oder Strategies
     </Header>
     <Header.Subheader
       as="h2"
@@ -37,20 +37,6 @@ const HomepageHeading = () => (
         marginTop: '1.5em',
       }}
     >
-      「このコンテストが存在しなかっ
-      <span style={{ color: 'rgb(229, 115, 110)', fontWeight: 'bold' }}>
-        たら
-      </span>
-      」
-      <br />
-      「あのコンテストに参加していなけ
-      <span style={{ color: 'rgb(229, 115, 110)', fontWeight: 'bold' }}>
-        れば
-      </span>
-      」
-      <br />
-      AtCoder tarareba は、過去を改竄してレートを最大化するサービスです
-      <br />
     </Header.Subheader>
   </Container>
 )
@@ -76,7 +62,7 @@ const App = () => {
             textAlign="center"
             inverted
             style={{
-              minHeight: page === 'top' ? 550 : 40,
+              minHeight: page === 'top' ? 350 : 40,
               padding: '0.2em 0em',
             }}
             vertical
