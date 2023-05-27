@@ -8,6 +8,7 @@ import json from '../contests.json';
 const TopPage = () => {
   const [contestURL, setContesetURL] = useState('');
   const [problems, setProblems] = useState<Problem[]>([]);
+  const [monkukui, setMonkukui] = useState<boolean>(false);
 
   return (
     <>
@@ -28,22 +29,23 @@ const TopPage = () => {
             }
             let ok: boolean = false;
             for (let i = 0; i < json.length; i++) {
-              console.log(json[i].id);
               if (json[i].id === contestURL) {
-                console.log(json[i]);
                 setProblems(json[i].problems);
                 ok = true;
                 break;
               }
             }
             if (!ok) {
-              alert('これをみて色々察してください\n a');
+              setMonkukui(true);
             }
           }}
         >
           Go
         </Form.Button>
       </Form>
+      {monkukui && (
+        <h1><a href={"https://github.com/monkukui/atcoder-strategies/blob/main/src/contests.json"}>ここ</a>らへんをみて色々察してください</h1>
+      )}
       <Strategies problems={problems} />
     </>
   )
