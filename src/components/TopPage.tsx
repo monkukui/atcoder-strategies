@@ -6,7 +6,7 @@ import Strategies from './Strategies'
 import json from '../contests.json';
 
 const TopPage = () => {
-  const [contestURL, setContesetURL] = useState('');
+  const [contestURL, setContesetURL] = useState('https://atcoder.jp/contests/abc303');
   const [problems, setProblems] = useState<Problem[]>([]);
   const [monkukui, setMonkukui] = useState<boolean>(false);
 
