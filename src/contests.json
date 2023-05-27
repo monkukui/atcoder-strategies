@@ -4,41 +4,49 @@
     "problems": [
       {
         "selected": true,
+        "solved": false,
         "id": "A",
         "score": 100
       },
       {
         "selected": true,
+        "solved": false,
         "id": "B",
         "score": 200
       },
       {
         "selected": true,
+        "solved": false,
         "id": "C",
         "score": 300
       },
       {
         "selected": true,
+        "solved": false,
         "id": "D",
         "score": 400
       },
       {
         "selected": true,
+        "solved": false,
         "id": "E",
         "score": 475
       },
       {
         "selected": true,
+        "solved": false,
         "id": "F",
         "score": 525
       },
       {
         "selected": true,
+        "solved": false,
         "id": "G",
         "score": 550
       },
       {
         "selected": true,
+        "solved": false,
         "id": "Ex",
         "score": 600
       }

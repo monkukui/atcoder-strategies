@@ -9,6 +9,7 @@ export interface Problem {
   id: string
   score: number
   selected: boolean
+  solved: boolean
 }
 
 export interface SolvedProblems {
@@ -38,6 +39,7 @@ const Strategies : React.FC<Props> = (props) => {
             <Table.Row>
               <Table.HeaderCell>問題</Table.HeaderCell>
               <Table.HeaderCell>点数</Table.HeaderCell>
+              <Table.HeaderCell>すでに解いた</Table.HeaderCell>
               <Table.HeaderCell>解く可能性がある</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -50,6 +52,16 @@ const Strategies : React.FC<Props> = (props) => {
                 >
                   <Table.Cell>{record.id}</Table.Cell>
                   <Table.Cell>{record.score}</Table.Cell>
+                  <Table.Cell>
+                    <Form.Checkbox
+                        onClick={() => {
+                          let v = selectedProblems;
+                          v[index].solved = !v[index].solved;
+                          setSelectedProblems(v);
+                          setSolvedProblemCombinations(enumerateSolvedProblemCombinations(selectedProblems));
+                        }}
+                    />
+                  </Table.Cell>
                   <Table.Cell>
                     <Form.Checkbox
                       defaultChecked
