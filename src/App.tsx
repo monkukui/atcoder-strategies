@@ -3,8 +3,6 @@ import './App.css'
 
 import TopPage from './components/TopPage'
 import HowToUse from './components/HowToUse'
-import Contact from './components/Contact'
-import Ranking from './components/Ranking'
 
 import {
   Button,
@@ -109,31 +107,13 @@ const App = () => {
                 >
                   How to use
                 </Menu.Item>
-                <Menu.Item
-                  as="a"
-                  active={page === 'ranking'}
-                  onClick={() => {
-                    setPage('ranking')
-                  }}
-                >
-                  Ranking
-                </Menu.Item>
-                <Menu.Item
-                  as="a"
-                  active={page === 'contact'}
-                  onClick={() => {
-                    setPage('contact')
-                  }}
-                >
-                  Contact
-                </Menu.Item>
                 <Menu.Item position="right">
                   <Button
                     as="a"
                     inverted={!fixed}
                     primary={fixed}
                     style={{ marginLeft: '0.5em' }}
-                    href="https://github.com/monkukui/atcoder-tarareba"
+                    href="https://github.com/monkukui/atcoder-strategies/tree/main"
                   >
                     GitHub
                   </Button>
@@ -146,8 +126,6 @@ const App = () => {
         <Container style={{ width: '70%' }}>
           {page === 'top' ? <TopPage /> : null}
           {page === 'howtouse' ? <HowToUse /> : null}
-          {page === 'contact' ? <Contact /> : null}
-          {page === 'ranking' ? <Ranking /> : null}
         </Container>
         <Segment
           inverted={true}
@@ -155,7 +133,7 @@ const App = () => {
           style={{ padding: '1em 0em', marginTop: '10em' }}
         >
           <Container textAlign="center">
-            <p>AtCoder tarareba 2020</p>
+            <p>AtCoder Strategies 2023</p>
           </Container>
         </Segment>
       </header>
