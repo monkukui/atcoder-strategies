@@ -51,5 +51,46 @@
         "score": 600
       }
     ]
+  },
+  {
+    "id": "https://atcoder.jp/contests/arc161",
+    "problems": [
+      {
+        "selected": true,
+        "solved": false,
+        "id": "A",
+        "score": 300
+      },
+      {
+        "selected": true,
+        "solved": false,
+        "id": "B",
+        "score": 400
+      },
+      {
+        "selected": true,
+        "solved": false,
+        "id": "C",
+        "score": 500
+      },
+      {
+        "selected": true,
+        "solved": false,
+        "id": "D",
+        "score": 500
+      },
+      {
+        "selected": true,
+        "solved": false,
+        "id": "E",
+        "score": 800
+      },
+      {
+        "selected": true,
+        "solved": false,
+        "id": "F",
+        "score": 900
+      }
+    ]
   }
 ]

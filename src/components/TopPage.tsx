@@ -6,7 +6,7 @@ import Strategies from './Strategies'
 import json from '../contests.json';
 
 const TopPage = () => {
-  const [contestURL, setContesetURL] = useState('https://atcoder.jp/contests/abc303');
+  const [contestURL, setContesetURL] = useState('https://atcoder.jp/contests/arc161');
   const [problems, setProblems] = useState<Problem[]>([]);
   const [monkukui, setMonkukui] = useState<boolean>(false);
 
@@ -16,7 +16,7 @@ const TopPage = () => {
         <Form.Input
           fluid={true}
           label={'contest URL'}
-          placeholder={'https://atcoder.jp/contests/abc303'}
+          placeholder={'https://atcoder.jp/contests/arc161'}
           value={contestURL}
           onChange={(e: any) => setContesetURL(e.target.value)}
         />
